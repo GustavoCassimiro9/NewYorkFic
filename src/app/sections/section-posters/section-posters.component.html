@@ -1,9 +1,20 @@
 <div class="noticesPosterContainer">
     <div class="primaryNotice">
-        <h1>Testando</h1>
+        <h2 class="subsection">{{list[0].subsection}}</h2>
+        <h2>{{list[0].title}}</h2>
+        <p>{{list[0].abstract}}</p>
+        <span class="autor">{{list[0].byline}}</span>
     </div>
     <div class="secundaryNotices">
-        <div class="notices"></div>
-        <div class="notices"></div>
+        <div class="notices">
+            <h2 class="subsection">{{list[1].subsection}}</h2>
+            <h2>{{list[1].title}}</h2>
+            <p>{{list[1].abstract}}</p>
+        </div>
+        <div class="notices">
+            <h2 class="subsection">{{list[2].subsection}}</h2>
+            <h2>{{list[2].title}}</h2>
+            <p>{{list[2].abstract}}</p>
+        </div>
     </div>
 </div>

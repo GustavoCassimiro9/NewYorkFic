@@ -2,21 +2,42 @@
 .noticesPosterContainer {
     display: flex;
     width: 100%;
-    height: 100%;
-    background-color: red;
     justify-content: space-between;
-
+    
     .primaryNotice {
         width: 60%;
         margin: 1.2rem;
         background-color: $constraste-primary-color;
+        cursor: pointer;
+
+        .autor{
+            display: block;
+            float: right;
+        }
+
+        
     }
+
     .secundaryNotices {
         width: 30%;
         margin: 1.2rem;
+        cursor: pointer;
+        
         .notices {
             background-color: $constraste-primary-color;
             height: 50%;
         }
+
+        p{
+            margin: 0.5rem 0;
+        }
     }
+}
+.subsection{
+    margin-bottom: 0.5rem;
+    color: $secundary-color;
+}
+
+.primaryNotice:hover{
+    background-color: $secundary-color ;
 }

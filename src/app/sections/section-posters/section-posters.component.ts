@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TopsStoryService } from 'src/app/service/tops-story.service';
 
 @Component({
   selector: 'app-section-posters',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionPostersComponent implements OnInit {
 
-  constructor() { }
+  public list: any[] = []
+  constructor(
+    public topNotices: TopsStoryService,
+  ) {
 
-  ngOnInit(): void {
+  }
+
+  ngOnInit() {
+    
+    this.topNotices.getTopResults().subscribe({
+      next: (response: any) => {
+        this.list = response.results;
+        console.log(this.list[1])
+      }
+    })
+
   }
 
 }
