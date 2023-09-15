@@ -1,0 +1,47 @@
+
+@import '../../dist/scss/variaveis.scss';
+header  {
+    padding: 1rem;
+    background-color: $primary-color;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 6rem;
+    
+        h1  {
+            font-family: 'Source Serif 4', serif;
+            font-size: 36px;
+            color: $constraste-primary-color;
+        }
+    
+        nav {
+            display: flex;
+            align-items: center;
+            width: initial;
+            input {
+                color: $constraste-primary-color;
+                background-color: $primary-color;
+                padding: 0.1rem 1.4rem;
+                height: 1.6rem;
+                width: 16rem;
+                border: 0;
+                border-bottom: 2px solid;
+                outline: 0;
+            }
+    
+            input::placeholder { 
+                color: $constraste-primary-color;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+            }
+            i{
+                position: absolute;
+                color: $constraste-primary-color;
+            }
+            
+        }
+        
+    }
+
+}
