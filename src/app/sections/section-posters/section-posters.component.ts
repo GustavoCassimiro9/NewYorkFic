@@ -20,7 +20,7 @@ export class SectionPostersComponent implements OnInit {
 
   ngOnInit() {
 
-    
+
     this.topNotices.getTopResults().subscribe({
       next: (response: any) => {
         this.list = response.results;
@@ -29,20 +29,25 @@ export class SectionPostersComponent implements OnInit {
     })
   }
 
-  public exibir(){
-    this.filtrando = this.list.filter( (obj) => {
-      
-        return obj.abstract.includes(this.result); 
-      
-      });
-      if(this.result){
-        this.resultadoDaPesquisa = `${this.filtrando[0].abstract}`
-        console.log(this.resultadoDaPesquisa)
-      }else{
-        this.resultadoDaPesquisa = ""
+  public exibir() {
+    this.filtrando = this.list.filter((obj) => {
+
+      if (obj.title.includes(this.result)) {
+        return obj.title.includes(this.result)
       }
-      
+      else if (obj.abstract.includes(this.result)) {
+        return obj.abstract.includes(this.result);
+      };
+
+    });
+    if (this.result) {
+      this.resultadoDaPesquisa = `${this.filtrando[0].abstract}`;
+      console.log(this.resultadoDaPesquisa);
+    } else {
+      this.resultadoDaPesquisa = "";
+    }
+
   }
 
-  
+
 }
