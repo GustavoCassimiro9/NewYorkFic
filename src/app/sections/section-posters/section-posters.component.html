@@ -1,3 +1,5 @@
+<input  placeholder="PesquisaTeste" [(ngModel)]="result" type="text" (ngModelChange)="exibir()">
+<div>{{resultadoDaPesquisa}}</div>
 <div class="noticesPosterContainer">
     <div class="primaryNotice">
         <h2 class="subsection">{{list[0].subsection}}</h2>
@@ -7,14 +9,14 @@
     </div>
     <div class="secundaryNotices">
         <div class="notices">
-            <h2 class="subsection">{{list[1].subsection}}</h2>
-            <h2>{{list[1].title}}</h2>
-            <p>{{list[1].abstract}}</p>
-        </div>
-        <div class="notices">
             <h2 class="subsection">{{list[2].subsection}}</h2>
             <h2>{{list[2].title}}</h2>
             <p>{{list[2].abstract}}</p>
+        </div>
+        <div class="notices">   
+            <h2 class="subsection">{{list[5].subsection}}</h2>
+            <h2>{{list[5].title}}</h2>
+            <p>{{list[5].abstract}}</p>
         </div>
     </div>
 </div>

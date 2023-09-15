@@ -9,6 +9,9 @@ import { TopsStoryService } from 'src/app/service/tops-story.service';
 export class SectionPostersComponent implements OnInit {
 
   public list: any[] = []
+  public filtrando: any;
+  public result: string = "";
+  public resultadoDaPesquisa: string = ""
   constructor(
     public topNotices: TopsStoryService,
   ) {
@@ -16,6 +19,7 @@ export class SectionPostersComponent implements OnInit {
   }
 
   ngOnInit() {
+
     
     this.topNotices.getTopResults().subscribe({
       next: (response: any) => {
@@ -23,7 +27,22 @@ export class SectionPostersComponent implements OnInit {
         console.log(this.list[1])
       }
     })
-
   }
 
+  public exibir(){
+    this.filtrando = this.list.filter( (obj) => {
+      
+        return obj.abstract.includes(this.result); 
+      
+      });
+      if(this.result){
+        this.resultadoDaPesquisa = `${this.filtrando[0].abstract}`
+        console.log(this.resultadoDaPesquisa)
+      }else{
+        this.resultadoDaPesquisa = ""
+      }
+      
+  }
+
+  
 }
