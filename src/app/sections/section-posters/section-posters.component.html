@@ -1,22 +1,27 @@
-<input  placeholder="PesquisaTeste" [(ngModel)]="result" type="text" (ngModelChange)="exibir()">
-<div>{{resultadoDaPesquisa}}</div>
+<!--<input  placeholder="PesquisaTeste" [(ngModel)]="result" type="text" (ngModelChange)="exibir()">
+<div>{{resultadoDaPesquisa.title}}</div>
+<div>{{resultadoDaPesquisa.abstract}}</div> -->
 <div class="noticesPosterContainer">
-    <div class="primaryNotice">
-        <h2 class="subsection">{{list[0].subsection}}</h2>
-        <h2>{{list[0].title}}</h2>
-        <p>{{list[0].abstract}}</p>
-        <span class="autor">{{list[0].byline}}</span>
+    <div class="primaryNotice" >
+        <span class="banner" [style.background-image]="'url(' + list[resultRandom[0]].multimedia[1].url + ')'" [style.background-size]="'cover'"></span>
+        <div class="texts">
+            <h2 class="section">{{list[resultRandom[0]].section}}</h2><br>
+            <h1 class="title">{{list[resultRandom[0]].title}}</h1>
+            <p class="abstract">{{list[resultRandom[0]].abstract}}</p>
+            <span class="autor">{{list[resultRandom[0]].byline}}</span>
+        </div>
+        
     </div>
     <div class="secundaryNotices">
         <div class="notices">
-            <h2 class="subsection">{{list[2].subsection}}</h2>
-            <h2>{{list[2].title}}</h2>
-            <p>{{list[2].abstract}}</p>
+            <h3 class="section">{{list[resultRandom[1]].section}}</h3>
+            <h2>{{list[resultRandom[1]].title}}</h2>
+            <p>{{list[resultRandom[1]].abstract}}</p>
         </div>
         <div class="notices">   
-            <h2 class="subsection">{{list[5].subsection}}</h2>
-            <h2>{{list[5].title}}</h2>
-            <p>{{list[5].abstract}}</p>
+            <h3 class="section">{{list[resultRandom[2]].section}}</h3>
+            <h2>{{list[resultRandom[2]].title}}</h2>
+            <p>{{list[resultRandom[2]].abstract}}</p>
         </div>
     </div>
 </div>

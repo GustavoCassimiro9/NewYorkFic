@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=Ri5ptCWXhQnKG8MvZmFbIdDqRwrx37o1",
+      "secure": false
+    }
+  }

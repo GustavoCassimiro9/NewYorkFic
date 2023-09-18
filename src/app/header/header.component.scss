@@ -1,14 +1,21 @@
 
-@import '../../dist/scss/variaveis.scss';
+@import '../../dist/variaveis.scss';
 header  {
-    padding: 1rem;
+    padding: 0.7rem;
     background-color: $primary-color;
 
     div {
         display: flex;
         justify-content: space-between;
         margin: 0 6rem;
-    
+        
+        .logo{
+            display: flex;
+            align-items: center;
+            margin: 0;
+            
+        }
+
         h1  {
             font-family: 'Source Serif 4', serif;
             font-size: 36px;

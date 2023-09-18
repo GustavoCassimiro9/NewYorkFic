@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TopsStoryService } from 'src/app/service/tops-story.service';
+import { ApiStoryService } from 'src/app/service/api-story.service';
 
 @Component({
   selector: 'app-section-posters',
@@ -9,45 +9,65 @@ import { TopsStoryService } from 'src/app/service/tops-story.service';
 export class SectionPostersComponent implements OnInit {
 
   public list: any[] = []
-  public filtrando: any;
+  public filter: any;
+  public resultRandom: any[] = []
   public result: string = "";
-  public resultadoDaPesquisa: string = ""
+  public resultadoDaPesquisa: any = {title: "", abstract: ""};
+
   constructor(
-    public topNotices: TopsStoryService,
+    public apiStoryService: ApiStoryService,
   ) {
 
+  }
+  public randomNumber( max:number ){
+    return Math.floor(Math.random() * max)
   }
 
   ngOnInit() {
 
 
-    this.topNotices.getTopResults().subscribe({
+    this.apiStoryService.getTopResults().subscribe({
       next: (response: any) => {
         this.list = response.results;
-        console.log(this.list[1])
+        this.resultRandom = [this.randomNumber(this.list.length),this.randomNumber(this.list.length),this.randomNumber(this.list.length)] 
+        console.log(this.list)
       }
     })
+
+
+
   }
 
+  
+
   public exibir() {
-    this.filtrando = this.list.filter((obj) => {
+    this.filter = this.list.filter((obj) => {
 
       if (obj.title.includes(this.result)) {
         return obj.title.includes(this.result)
       }
-      else if (obj.abstract.includes(this.result)) {
+      if (obj.abstract.includes(this.result)) {
         return obj.abstract.includes(this.result);
       };
 
     });
+
     if (this.result) {
-      this.resultadoDaPesquisa = `${this.filtrando[0].abstract}`;
-      console.log(this.resultadoDaPesquisa);
+
+      this.resultadoDaPesquisa.title = this.filter[0].title;
+      this.resultadoDaPesquisa.abstract = this.filter[0].abstract;
+      
     } else {
-      this.resultadoDaPesquisa = "";
+      this.resultadoDaPesquisa.title = "";
+      this.resultadoDaPesquisa.abstract = "";
     }
 
   }
 
+
+  public random(){
+
+
+  }
 
 }

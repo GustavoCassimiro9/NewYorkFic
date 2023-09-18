@@ -1,4 +1,4 @@
-@import '../../../dist/scss/variaveis.scss';
+@import '../../../dist/variaveis.scss';
 .noticesPosterContainer {
     display: flex;
     width: 100%;
@@ -6,33 +6,88 @@
     
     .primaryNotice {
         width: 60%;
+        height: 30rem;
         margin: 1.2rem;
-        background-color: $constraste-primary-color;
+        display: flex;
+        align-items: center;
+        position: relative;
         cursor: pointer;
-
-        .autor{
+        text-shadow: 0.1em 0.1em 0.1em black;
+        
+        .banner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            opacity: 0.9;
+            filter: brightness(0.4);
+            
+        }
+        .autor {
             float: right;
         }
 
-        
-    }
+        .texts {
+            z-index: 2;
+            margin: 2rem;
+            color: white;  
+            position: absolute;
+            align-content: center;
+            
+            .section {
+                font-weight: 600;
+            }
 
+            .title {
+                margin-bottom: 0.5rem;
+                
+            }
+            .abstract{
+                margin-bottom: 1rem;
+                font-family: sans-serif !important;
+                
+            }
+        }
+
+        &:hover {
+            
+            .banner {
+                opacity: 1 !important;
+                filter: brightness(0.3);
+                transition: 0.4s;
+            }
+        }
+    }
     .secundaryNotices {
         width: 30%;
-        margin: 1.2rem;
+        margin: 2rem;
         cursor: pointer;
-        
-        .notices {
-            background-color: $constraste-primary-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .section{
+            margin-bottom: 1rem;
         }
 
-        p{
+        .notices {
+            padding: 0.5rem;
+            color: #161616;
+
+            &:hover {
+                color: black;   
+                transition: 0.4s;
+
+            }
+
+        }   
+
+        p {
+            font-family: sans-serif !important;
             margin: 1rem 0 !important;
+            font-size: 16px;
         }
+
+        
     }
 }
-.subsection{
-    margin-bottom: 0.5rem;
-    color: $secundary-color;
-}
-

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiStoryService } from 'src/app/service/api-story.service';
 
 @Component({
   selector: 'app-section-notices',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionNoticesComponent implements OnInit {
 
-  constructor() { }
+  public list: any[] = [];
+
+  constructor(
+    public apiStoryService: ApiStoryService
+    ) { }
 
   ngOnInit(): void {
+    this.apiStoryService.getArchivesResults().subscribe({
+      next: (response: any) => {
+        this.list = response;
+        
+      }
+    })
   }
 
 }
