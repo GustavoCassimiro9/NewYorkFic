@@ -29,43 +29,10 @@ export class SectionPostersComponent implements OnInit {
     this.apiStoryService.getTopResults().subscribe({
       next: (response: any) => {
         this.list = response.results;
-        this.resultRandom = [this.randomNumber(this.list.length),this.randomNumber(this.list.length),this.randomNumber(this.list.length)] 
-        console.log(this.list)
+        this.resultRandom = [this.randomNumber(this.list.length),this.randomNumber(this.list.length),this.randomNumber(this.list.length)]; 
       }
     })
 
-
-
-  }
-
-  
-
-  public exibir() {
-    this.filter = this.list.filter((obj) => {
-
-      if (obj.title.includes(this.result)) {
-        return obj.title.includes(this.result)
-      }
-      if (obj.abstract.includes(this.result)) {
-        return obj.abstract.includes(this.result);
-      };
-
-    });
-
-    if (this.result) {
-
-      this.resultadoDaPesquisa.title = this.filter[0].title;
-      this.resultadoDaPesquisa.abstract = this.filter[0].abstract;
-      
-    } else {
-      this.resultadoDaPesquisa.title = "";
-      this.resultadoDaPesquisa.abstract = "";
-    }
-
-  }
-
-
-  public random(){
 
 
   }

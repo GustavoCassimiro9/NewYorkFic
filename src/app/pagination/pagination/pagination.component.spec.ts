@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SectionPostersComponent } from './section-posters.component';
+import { PaginationComponent } from './pagination.component';
 
-fdescribe('SectionPostersComponent', () => {
-  let component: SectionPostersComponent;
-  let fixture: ComponentFixture<SectionPostersComponent>;
-  
+describe('PaginationComponent', () => {
+  let component: PaginationComponent;
+  let fixture: ComponentFixture<PaginationComponent>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SectionPostersComponent ]
+      declarations: [ PaginationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SectionPostersComponent);
+    fixture = TestBed.createComponent(PaginationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

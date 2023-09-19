@@ -1,8 +1,6 @@
-
-@import '../../dist/variaveis.scss';
 header  {
     padding: 0.7rem;
-    background-color: $primary-color;
+    background-color: #1a1a1a;
 
     div {
         display: flex;
@@ -17,9 +15,10 @@ header  {
         }
 
         h1  {
+            margin: 0;
             font-family: 'Source Serif 4', serif;
             font-size: 36px;
-            color: $constraste-primary-color;
+            color: white;
         }
     
         nav {
@@ -27,8 +26,8 @@ header  {
             align-items: center;
             width: initial;
             input {
-                color: $constraste-primary-color;
-                background-color: $primary-color;
+                color: white;
+                background-color: #1a1a1a;
                 padding: 0.1rem 1.4rem;
                 height: 1.6rem;
                 width: 16rem;
@@ -38,13 +37,13 @@ header  {
             }
     
             input::placeholder { 
-                color: $constraste-primary-color;
+                color: white;
                 font-family: 'Inter', sans-serif;
                 font-weight: 600;
             }
             i{
                 position: absolute;
-                color: $constraste-primary-color;
+                color: white;
             }
             
         }

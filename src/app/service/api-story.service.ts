@@ -9,7 +9,7 @@ export class ApiStoryService {
   public list: any[] = [];
   private token: string = "Ri5ptCWXhQnKG8MvZmFbIdDqRwrx37o1"
   private urlTopStory: string = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${this.token}`
-  private urlArchives: string = `https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=${this.token}`
+  private urlArchives: string = `https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${this.token}`
 
   constructor(public http: HttpClient) {
 
@@ -29,6 +29,6 @@ export class ApiStoryService {
   }
 
   public getArchivesResults(){
-    return this.http.get(this.urlArchives, this.getHeaders());
+    return this.http.get(this.urlArchives);
   }
 }

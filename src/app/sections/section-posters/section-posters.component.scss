@@ -1,4 +1,3 @@
-@import '../../../dist/variaveis.scss';
 .noticesPosterContainer {
     display: flex;
     width: 100%;
@@ -60,19 +59,24 @@
     }
     .secundaryNotices {
         width: 30%;
-        margin: 2rem;
+        margin: 0 0rem 2rem 2rem;
         cursor: pointer;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        font-size: 16px;
 
         .section{
-            margin-bottom: 1rem;
+            margin: 0.5rem 0 0.5rem 0;
         }
 
         .notices {
             padding: 0.5rem;
             color: #161616;
+            
+            .title, .section {
+                font-size: 1.3rem;
+            }
 
             &:hover {
                 color: black;   
@@ -84,7 +88,6 @@
 
         p {
             font-family: sans-serif !important;
-            margin: 1rem 0 !important;
             font-size: 16px;
         }
 

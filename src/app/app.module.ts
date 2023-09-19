@@ -9,6 +9,7 @@ import { SectionsComponent } from './sections/sections.component';
 import { SectionPostersComponent } from './sections/section-posters/section-posters.component';
 import { SectionNoticesComponent } from './sections/section-notices/section-notices.component';
 import { FormsModule } from '@angular/forms';
+import { PaginationComponent } from './pagination/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     SectionsComponent,
     SectionPostersComponent,
-    SectionNoticesComponent
+    SectionNoticesComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
